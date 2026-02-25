@@ -1,24 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>Ngọc Anh Portfolio</title>
+    <meta charset="UTF-8">
+    <title>Ngọc Anh | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f1ea;
+            color: #3a3a3a;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background: linear-gradient(to right, #d8cfc4, #f4f1ea);
+            text-align: center;
+        }
+
+        header img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        section {
+            padding: 70px 15%;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 60%;
+            height: 3px;
+            background-color: #b8a58c;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+        }
+
+        .timeline div {
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-box {
+            background-color: #e6dfd3;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #d8cfc4;
+            margin-top: 50px;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Xin chào, mình là Ngọc Anh 👋</h1>
-    <p>Mình là sinh viên yêu thích lập trình và phân tích dữ liệu.</p>
 
-    <h2>Kỹ năng</h2>
-    <ul>
-        <li>Python</li>
-        <li>HTML/CSS</li>
-        <li>Machine Learning</li>
-    </ul>
+<header>
+    <div>
+        <img src="9d273e40f8d5438b1ac4.jpg" alt="Ngọc Anh">
+        <h1>Ngọc Anh</h1>
+        <p>Communication & Creative Enthusiast</p>
+    </div>
+</header>
 
-    <h2>Dự án</h2>
-    <p>1. Phân tích dữ liệu bất động sản</p>
-    <p>2. Website portfolio cá nhân</p>
+<section>
+    <h2 class="section-title">About Me</h2>
+    <p>
+        Mình là người yêu thích truyền thông và kể chuyện bằng hình ảnh. 
+        Với kinh nghiệm hoạt động Đoàn - CLB và 2 năm làm Marketing tại Trung tâm Sao Việt, 
+        mình theo đuổi phong cách sáng tạo mang hơi thở nghệ thuật và chiều sâu cảm xúc.
+    </p>
+</section>
 
-    <h2>Liên hệ</h2>
-    <p>Email: your_email@gmail.com</p>
+<section>
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+        <div><strong>Gen 19 – Ban Thông tin Tuyên truyền Đoàn Thanh niên</strong></div>
+        <div><strong>Phó Ban Truyền thông – CLB Lý luận chính trị trẻ</strong></div>
+        <div><strong>Marketing – Trung tâm Sao Việt (2 năm)</strong></div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+        <div class="skill-box">Adobe Illustrator</div>
+        <div class="skill-box">Photoshop</div>
+        <div class="skill-box">Lightroom</div>
+        <div class="skill-box">Canva</div>
+        <div class="skill-box">Capcut</div>
+        <div class="skill-box">Content Creation</div>
+        <div class="skill-box">Social Media Marketing</div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Photography</h2>
+    <div class="gallery">
+        <img src="22ea5e7ec7bc49e210ad2.jpg" alt="">
+        <img src="ca567e1ce6de688031cf3.jpg" alt="">
+        <img src="ecf8604af98877d62e991.jpg" alt="">
+    </div>
+</section>
+
+<footer>
+    © 2026 Ngọc Anh | Artistic Portfolio
+</footer>
+
 </body>
 </html>
