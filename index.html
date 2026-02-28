@@ -17,6 +17,7 @@ export default function Portfolio() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         />
+
         <motion.h1
           className="text-4xl md:text-6xl font-bold"
           initial={{ opacity: 0 }}
@@ -25,9 +26,11 @@ export default function Portfolio() {
         >
           Ngọc Anh
         </motion.h1>
+
         <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
           Marketing • Communications • Research • Youth Leadership
         </p>
+
         <div className="flex justify-center gap-4">
           <Button className="rounded-2xl">Download CV</Button>
           <Button variant="outline" className="rounded-2xl">Contact Me</Button>
@@ -63,6 +66,7 @@ export default function Portfolio() {
       {/* PROJECTS */}
       <section className="max-w-5xl mx-auto mt-20">
         <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
+
         <div className="grid md:grid-cols-3 gap-6">
           {[1, 2, 3].map((item) => (
             <motion.div
@@ -90,29 +94,39 @@ export default function Portfolio() {
       {/* SKILLS */}
       <section className="max-w-5xl mx-auto mt-20">
         <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          {["Brand Strategy", "Content Marketing", "Research Writing", "Public Speaking", "SEO", "Social Media", "Leadership", "Data Analysis"].map(
-            (skill, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5 }}
-                className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4"
-              >
-                {skill}
-              </motion.div>
-            )
-          )}
+          {[
+            "Brand Strategy",
+            "Content Marketing",
+            "Research Writing",
+            "Public Speaking",
+            "SEO",
+            "Social Media",
+            "Leadership",
+            "Data Analysis",
+          ].map((skill, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ y: -5 }}
+              className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4"
+            >
+              {skill}
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* CONTACT */}
       <section className="max-w-5xl mx-auto mt-20 text-center space-y-6">
         <h2 className="text-3xl font-bold">Let’s Connect</h2>
+
         <div className="flex justify-center gap-6">
           <Mail className="w-6 h-6" />
           <Github className="w-6 h-6" />
           <Linkedin className="w-6 h-6" />
         </div>
+
         <p className="text-zinc-500 text-sm">
           Designed & Built with React + Tailwind + Framer Motion
         </p>
