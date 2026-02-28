@@ -1,136 +1,241 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Mail, Github, Linkedin } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ngoc Anh | Dark Galaxy</title>
 
-export default function Portfolio() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white px-6 py-12">
-      {/* HERO */}
-      <section className="max-w-5xl mx-auto text-center space-y-6">
-        <motion.img
-          src="/avatar.jpg"
-          alt="avatar"
-          className="mx-auto rounded-2xl shadow-2xl"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          Ngọc Anh
-        </motion.h1>
-
-        <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-          Marketing • Communications • Research • Youth Leadership
-        </p>
-
-        <div className="flex justify-center gap-4">
-          <Button className="rounded-2xl">Download CV</Button>
-          <Button variant="outline" className="rounded-2xl">Contact Me</Button>
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section className="max-w-5xl mx-auto mt-20 grid md:grid-cols-2 gap-8">
-        <Card className="bg-zinc-900 border-zinc-800 rounded-2xl">
-          <CardContent className="p-6 space-y-4">
-            <h2 className="text-2xl font-semibold">About Me</h2>
-            <p className="text-zinc-400">
-              A proactive communication enthusiast with strong experience in youth
-              organizations, marketing strategy, and academic research.
-              Passionate about storytelling, branding, and global economics.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-zinc-900 border-zinc-800 rounded-2xl">
-          <CardContent className="p-6 space-y-3">
-            <h2 className="text-2xl font-semibold">Achievements</h2>
-            <ul className="text-zinc-400 space-y-2 text-sm">
-              <li>• Member Gen 19 – Communications Department, Youth Union</li>
-              <li>• Vice Head of Media – FTU Youth Leadership Club</li>
-              <li>• 2 Years Marketing Executive – Sao Viet Center</li>
-              <li>• Academic Research on Monetary Policy & Emerging Markets</li>
-            </ul>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* PROJECTS */}
-      <section className="max-w-5xl mx-auto mt-20">
-        <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((item) => (
-            <motion.div
-              key={item}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 200 }}
-            >
-              <Card className="bg-zinc-900 border-zinc-800 rounded-2xl shadow-xl">
-                <CardContent className="p-6 space-y-3">
-                  <h3 className="font-semibold">Project {item}</h3>
-                  <p className="text-zinc-400 text-sm">
-                    Strategic branding & communication campaign with measurable
-                    engagement growth.
-                  </p>
-                  <Button size="sm" className="rounded-xl">
-                    View Case Study
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* SKILLS */}
-      <section className="max-w-5xl mx-auto mt-20">
-        <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          {[
-            "Brand Strategy",
-            "Content Marketing",
-            "Research Writing",
-            "Public Speaking",
-            "SEO",
-            "Social Media",
-            "Leadership",
-            "Data Analysis",
-          ].map((skill, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -5 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4"
-            >
-              {skill}
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section className="max-w-5xl mx-auto mt-20 text-center space-y-6">
-        <h2 className="text-3xl font-bold">Let’s Connect</h2>
-
-        <div className="flex justify-center gap-6">
-          <Mail className="w-6 h-6" />
-          <Github className="w-6 h-6" />
-          <Linkedin className="w-6 h-6" />
-        </div>
-
-        <p className="text-zinc-500 text-sm">
-          Designed & Built with React + Tailwind + Framer Motion
-        </p>
-      </section>
-    </div>
-  );
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
+
+body{
+font-family:'Poppins',sans-serif;
+color:white;
+overflow-x:hidden;
+background:linear-gradient(-45deg,#0f0c29,#302b63,#24243e,#000000);
+background-size:400% 400%;
+animation:gradientMove 15s ease infinite;
+cursor:none;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* FLOATING STARS */
+.star{
+position:fixed;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation:float linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-100vh);}
+}
+
+/* QUOTE BACKGROUND */
+.quote-bg{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:60px;
+opacity:0.05;
+text-align:center;
+width:80%;
+line-height:1.4;
+pointer-events:none;
+}
+
+/* INTRO SCREEN */
+#intro{
+position:fixed;
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+}
+
+#intro button{
+padding:15px 40px;
+font-size:20px;
+border:none;
+border-radius:40px;
+background:linear-gradient(45deg,#6a00ff,#ff00cc);
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px #ff00cc;
+transition:0.4s;
+}
+
+#intro button:hover{
+transform:scale(1.1);
+}
+
+section{
+padding:100px 12%;
+text-align:center;
+}
+
+.hero img{
+width:300px;
+max-width:90%;
+border-radius:20px;
+box-shadow:0 0 40px #6a00ff;
+margin-bottom:30px;
+}
+
+.hero h1{
+font-family:'Orbitron',sans-serif;
+font-size:50px;
+margin-bottom:10px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+padding:50px;
+border-radius:25px;
+margin-top:60px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:20px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px #ff00cc;
+}
+
+footer{
+padding:40px;
+opacity:0.6;
+}
+
+/* SPARKLE CURSOR */
+.cursor{
+position:fixed;
+width:15px;
+height:15px;
+border-radius:50%;
+background:#ff00cc;
+pointer-events:none;
+box-shadow:0 0 20px #ff00cc;
+z-index:10000;
+}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+<h1 style="margin-bottom:30px;">✨ Enter My Galaxy ✨</h1>
+<button onclick="enterGalaxy()">Enter</button>
+</div>
+
+<div class="quote-bg">
+"I had the time of my life fighting dragons with you."
+</div>
+
+<div class="cursor" id="cursor"></div>
+
+<section class="hero">
+<img src="22ea5e7ec7bc49e210ad2.jpg">
+<h1>Ngoc Anh</h1>
+<p>Creative Explorer • Galaxy Dreamer • Visual Storyteller</p>
+
+<p style="margin-top:20px;">🎵 Happy Vibes Playing</p>
+<audio controls>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+</audio>
+</section>
+
+<section class="card">
+<h2>About Me</h2>
+<p style="margin-top:20px;">
+I love designing visuals, capturing moments and exploring magical cinematic worlds.
+Creativity is how I turn imagination into reality.
+</p>
+</section>
+
+<section class="card">
+<h2>Design & Photography</h2>
+<p style="margin-top:20px;">
+Adobe Illustrator • Photoshop • Lightroom • Canva • CapCut
+</p>
+
+<div class="gallery">
+<img src="22ea5e7ec7bc49e210ad2.jpg">
+<img src="ca567e1ce6de688031cf3.jpg">
+<img src="ecf8604af98877d62e991.jpg">
+</div>
+</section>
+
+<section class="card">
+<h2>I'm a Fan of</h2>
+
+<div class="gallery">
+<img src="harry potter.jpg">
+<img src="sherlock homes.webp">
+<img src="conan.jpg">
+</div>
+</section>
+
+<footer>
+© 2026 Ngoc Anh • Dark Galaxy Edition 🌌
+</footer>
+
+<script>
+function enterGalaxy(){
+document.getElementById("intro").style.display="none";
+}
+
+/* generate stars */
+for(let i=0;i<100;i++){
+let star=document.createElement("div");
+star.className="star";
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+star.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(star);
+}
+
+/* sparkle cursor */
+const cursor=document.getElementById("cursor");
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.pageX+"px";
+cursor.style.top=e.pageY+"px";
+});
+</script>
+
+</body>
+</html>
