@@ -8,26 +8,44 @@
 <style>
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family:'Segoe UI',sans-serif;
   color:white;
-  background: linear-gradient(135deg,#3b0764,#1e1b4b,#0f172a);
+  background: linear-gradient(135deg,#4c1d95,#1e1b4b,#0f172a);
   overflow-x:hidden;
 }
 
-/* Galaxy stars */
+/* Galaxy Stars */
 body::before{
   content:"";
   position:fixed;
   width:200%;
   height:200%;
   background: radial-gradient(white 1px, transparent 1px);
-  background-size:40px 40px;
-  animation: move 20s linear infinite;
-  opacity:0.4;
+  background-size:50px 50px;
+  animation: starsMove 30s linear infinite;
+  opacity:0.35;
 }
-@keyframes move{
+
+@keyframes starsMove{
   from{transform:translateY(0);}
-  to{transform:translateY(-200px);}
+  to{transform:translateY(-300px);}
+}
+
+/* Flying Wands */
+.wand{
+  position:fixed;
+  font-size:24px;
+  animation: fly 12s linear infinite;
+  opacity:0.8;
+}
+
+.w1{top:20%;left:-50px;animation-delay:0s;}
+.w2{top:60%;left:-100px;animation-delay:4s;}
+.w3{top:40%;left:-150px;animation-delay:8s;}
+
+@keyframes fly{
+  from{transform:translateX(0) rotate(0deg);} 
+  to{transform:translateX(120vw) rotate(360deg);} 
 }
 
 .container{
@@ -39,19 +57,17 @@ body::before{
 h1{
   text-align:center;
   font-size:42px;
-  text-shadow:0 0 15px #c084fc;
+  text-shadow:0 0 20px #c084fc;
 }
 
-.section{
-  margin:80px 0;
-}
+.section{margin:80px 0;}
 
 .card{
   background:rgba(255,255,255,0.08);
   padding:25px;
   border-radius:20px;
   backdrop-filter:blur(10px);
-  box-shadow:0 0 25px rgba(168,85,247,0.5);
+  box-shadow:0 0 30px rgba(168,85,247,0.6);
 }
 
 .avatar{
@@ -59,45 +75,32 @@ h1{
   margin:40px auto;
   width:300px;
   border-radius:25px;
-  box-shadow:0 0 40px rgba(192,132,252,0.8);
+  box-shadow:0 0 50px rgba(192,132,252,0.9);
 }
 
-.timeline{
-  border-left:3px solid gold;
-  padding-left:20px;
-}
+.timeline{border-left:3px solid gold;padding-left:20px;}
+.timeline-item{margin-bottom:20px;}
 
-.timeline-item{
-  margin-bottom:20px;
-}
+.skill{display:flex;justify-content:space-between;margin-bottom:10px;}
+.stars{color:gold;}
 
-.skill{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:10px;
-}
-
-.stars{
-  color:gold;
-}
-
+/* FIXED PHOTO GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  margin-top:30px;
 }
 
-.gallery img,
-.movie-card img{
+.grid img{
   width:100%;
-  height:280px;
+  height:320px;
   object-fit:cover;
-  border-radius:15px;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(168,85,247,0.5);
 }
 
-.movie-card{
-  text-align:center;
-}
+.movie-card{text-align:center;}
 
 .quote{
   font-style:italic;
@@ -106,29 +109,15 @@ h1{
   opacity:0.9;
 }
 
-.music-btn{
-  display:block;
-  margin:30px auto;
-  padding:12px 25px;
-  border:none;
-  border-radius:25px;
-  background:rgba(255,255,255,0.2);
-  color:white;
-  cursor:pointer;
-}
-.music-btn:hover{
-  background:rgba(255,255,255,0.35);
-}
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC ON TOP -->
-<button class="music-btn" onclick="playMusic()">🎵 Play Love Story</button>
-<audio id="bgMusic" loop>
-  <source src="love-story.mp3" type="audio/mpeg">
-</audio>
+<!-- Flying Wand Stickers -->
+<div class="wand w1">🪄</div>
+<div class="wand w2">🪄</div>
+<div class="wand w3">🪄</div>
 
 <div class="container">
 
@@ -141,6 +130,11 @@ Year 3 International Economics student with strong interest in marketing strateg
 communication activities and creative design. Experienced in youth organizations
 and media-related roles.
 </p>
+
+<!-- Harry Potter Music Auto Play -->
+<audio autoplay loop>
+  <source src="harry-potter-theme.mp3" type="audio/mpeg">
+</audio>
 
 <!-- EXPERIENCE -->
 <div class="section">
@@ -163,7 +157,7 @@ and media-related roles.
   <div class="skill"><span>CapCut</span><span class="stars">⭐⭐⭐ (3.0)</span></div>
 </div>
 
-<div class="grid" style="margin-top:30px;">
+<div class="grid">
   <img src="22ea5e7ec7bc49e210ad2.jpg">
   <img src="ca567e1ce6de688031cf3.jpg">
   <img src="ecf8604af98877d62e991.jpg">
@@ -197,12 +191,6 @@ and media-related roles.
 </div>
 
 </div>
-
-<script>
-function playMusic(){
-  document.getElementById("bgMusic").play();
-}
-</script>
 
 </body>
 </html>
