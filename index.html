@@ -100,8 +100,22 @@ h1{text-align:center;font-size:42px;text-shadow:0 0 20px #c084fc;}
 .movie-card{text-align:center;}
 .quote{font-style:italic;font-size:14px;margin-top:8px;opacity:0.9;}
 
-.spotify{max-width:500px;margin:40px auto;}
+/* Music Button */
+.music-btn{
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff9a9e,#c084fc);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 20px #ff9a9e;
+  transition:0.3s;
+}
 
+.music-btn:hover{
+  transform:scale(1.1);
+}
 </style>
 </head>
 
@@ -115,6 +129,24 @@ h1{text-align:center;font-size:42px;text-shadow:0 0 20px #c084fc;}
 
 <h1>✨ Ngọc Anh – Portfolio ✨</h1>
 
+<!-- Music Button -->
+<div style="text-align:center; margin-top:30px;">
+<button onclick="startMusic()" class="music-btn">
+💖 Enter & Play Music
+</button>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="I Forgot That You Existed.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startMusic(){
+  document.getElementById("bgMusic").play();
+  document.querySelector(".music-btn").style.display="none";
+}
+</script>
+
 <img src="avatar.jpg" class="avatar">
 
 <p class="intro-text">
@@ -122,17 +154,6 @@ Year 3 International Economics student passionate about marketing strategy,
 creative communication and visual storytelling. Below is a brief journey of my
 experience, skills and cinematic inspirations that shape my creative identity.
 </p>
-
-<!-- Spotify Embed: Taylor Swift - Lover -->
-<div class="spotify">
-<iframe style="border-radius:12px" 
-src="https://open.spotify.com/embed/track/1dGr1c8CrMLDpV6mPbImSI?utm_source=generator" 
-width="100%" 
-height="80" 
-frameBorder="0" 
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-</iframe>
-</div>
 
 <div class="section">
 <h2>🌟 Experience Timeline</h2>
@@ -150,8 +171,7 @@ and marketing in both academic and practical environments.
 <div class="section">
 <h2>🎨 Design & Photography</h2>
 <p class="intro-text">
-Creative tools help me transform ideas into visuals. I continuously improve my
-technical proficiency through academic projects and media work.
+Creative tools help me transform ideas into visuals.
 </p>
 <div class="card">
   <div class="skill"><span>Adobe Illustrator</span><span class="stars">⭐⭐⭐ (3.0)</span></div>
@@ -170,10 +190,7 @@ technical proficiency through academic projects and media work.
 
 <div class="section">
 <h2>🎬 Favorite Films</h2>
-<p class="intro-text">
-Cinema inspires my imagination and storytelling mindset. These films reflect
-my appreciation for mystery, logic and magical creativity.
-</p>
+
 <div class="grid">
 
 <div class="movie-card">
@@ -198,6 +215,5 @@ my appreciation for mystery, logic and magical creativity.
 </div>
 
 </div>
-
 </body>
 </html>
