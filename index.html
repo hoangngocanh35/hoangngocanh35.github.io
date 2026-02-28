@@ -4,231 +4,126 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ngọc Anh Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 
 body{
-background:linear-gradient(135deg,#000,#111,#000);
+background: radial-gradient(circle at top,#1a1a2e,#0f0f1a 60%,#000);
 color:white;
-padding:60px 20px;
+overflow-x:hidden;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
+/* Floating subtle magic dots */
+body::before{
+content:"✨ ⚡ 🪄";
+position:fixed;
+top:20%;
+left:5%;
+font-size:40px;
+opacity:0.08;
 }
 
-.hero{
-text-align:center;
-margin-bottom:100px;
-}
+.container{max-width:1100px;margin:auto;padding:60px 20px}
+
+.hero{text-align:center;margin-bottom:80px}
 
 .hero img{
-border-radius:20px;
-box-shadow:0 20px 60px rgba(0,0,0,0.6);
+border-radius:25px;
+box-shadow:0 25px 70px rgba(0,0,0,0.7);
 margin-bottom:30px;
-max-width:100%;
-height:auto;
 }
 
-.hero h1{
-font-size:52px;
-font-weight:800;
-}
+.hero h1{font-size:52px;font-weight:800}
+.hero p{color:#bbb;margin-top:15px;font-size:18px}
 
-.hero p{
-color:#aaa;
-margin-top:15px;
-font-size:18px;
-}
-
-.btn{
-display:inline-block;
-margin:25px 12px 0;
-padding:12px 28px;
-border-radius:30px;
-background:white;
-color:black;
-font-weight:600;
-text-decoration:none;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-}
-
-.section{
-margin-bottom:100px;
-}
-
-.section h2{
-margin-bottom:25px;
-font-size:32px;
-}
+.section{margin-bottom:100px}
+.section h2{font-size:32px;margin-bottom:30px;border-left:5px solid #ffcc00;padding-left:15px}
 
 .card{
-background:#111;
-padding:35px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+padding:30px;
 border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
 line-height:1.8;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+.timeline{border-left:3px solid #ffcc00;padding-left:25px}
+.timeline-item{margin-bottom:30px;position:relative}
+.timeline-item::before{
+content:"";
+position:absolute;
+left:-33px;
+top:5px;
+width:15px;height:15px;
+background:#ffcc00;
+border-radius:50%;
 }
 
-.project{
-background:#111;
-padding:30px;
-border-radius:20px;
-transition:0.3s;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
 
-.project:hover{
-transform:translateY(-6px);
+.gallery img{
+width:100%;
+border-radius:15px;
+transition:0.4s;
 }
+.gallery img:hover{transform:scale(1.05)}
 
-.skill{
-background:#111;
+.movie-card{
+background:rgba(255,255,255,0.05);
 padding:20px;
-border-radius:16px;
-margin-bottom:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.stars{
-color:gold;
-font-size:18px;
-}
-
-.footer{
+border-radius:20px;
 text-align:center;
-color:#666;
-margin-top:80px;
-font-size:14px;
 }
+.movie-card img{width:100%;border-radius:15px;margin-bottom:15px}
+
+.footer{text-align:center;margin-top:80px;color:#888}
+
 </style>
 </head>
 
 <body>
 
-<!-- Background Music -->
-<audio autoplay loop>
-  <source src="love-story.mp3" type="audio/mpeg">
-</audio>
-
 <div class="container">
 
+<!-- HERO -->
 <div class="hero">
-<img src="avatar" alt="Avatar">
+<img src="avatar.jpg" alt="Avatar">
 <h1>Ngọc Anh</h1>
 <p>Marketing • Communications • Research • Youth Leadership</p>
-<p style="margin-top:20px; max-width:750px; margin-left:auto; margin-right:auto; color:#bbb;">
-Final-year student majoring in International Economics with strong interest in marketing strategy, global trade policy and communication leadership. Experienced in youth organizations, brand campaigns and academic research. Passionate about building meaningful stories that create measurable impact.
+<p style="max-width:750px;margin:20px auto;color:#ccc">
+Final-year student majoring in International Economics with strong interest in marketing strategy and global trade policy. Experienced in youth communication activities, media leadership and academic research. Passionate about storytelling, branding and creative visual design.
 </p>
-<a href="#" class="btn">Download CV</a>
-<a href="mailto:yourmail@email.com" class="btn">Contact Me</a>
 </div>
 
+<!-- MUSIC AFTER INTRO -->
+<audio controls autoplay loop style="width:100%;margin-bottom:60px">
+<source src="love-story.mp3" type="audio/mpeg">
+</audio>
+
+<!-- EXPERIENCE TIMELINE -->
 <div class="section">
-<h2>Professional Experience</h2>
-<div class="card">
-<strong>Vice Head of Media – FTU Youth Leadership Club</strong><br>
-Led communication strategy, managed content team of 10 members and increased engagement by 120% in one academic year.<br><br>
+<h2>Experience Timeline</h2>
+<div class="card timeline">
 
-<strong>Marketing Executive – Sao Viet Center (2 Years)</strong><br>
-Developed digital campaigns, managed social media channels and supported branding strategy execution.<br><br>
+<div class="timeline-item">
+<strong>Year 1:</strong> Member Gen 19 – Communications Department, Youth Union
+</div>
 
-<strong>Member Gen 19 – Communications Department, Youth Union</strong><br>
-Organized internal & external media activities, event promotion and youth engagement campaigns.
+<div class="timeline-item">
+<strong>Year 1–2:</strong> Marketing Executive – Sao Viet Center
+</div>
+
+<div class="timeline-item">
+<strong>Year 2:</strong> Vice Head of Media – FTU Youth Leadership Club
+</div>
+
 </div>
 </div>
 
+<!-- DESIGN & PHOTOGRAPHY -->
 <div class="section">
-<h2>Academic & Research Focus</h2>
-<div class="card">
-Research on Monetary Policy Impact on Emerging Markets (Case of Vietnam).<br>
-Analysis of US–China Trade Conflict and Vietnam’s Trade Balance.<br>
-Strong background in macroeconomics, international finance and FDI impact analysis.
-</div>
-</div>
-
-<div class="section">
-<h2>Skills</h2>
-
-<div class="skill">
-<span>Brand Strategy</span>
-<span class="stars">★★★★☆</span>
-</div>
-
-<div class="skill">
-<span>Content Marketing</span>
-<span class="stars">★★★★☆</span>
-</div>
-
-<div class="skill">
-<span>Research Writing</span>
-<span class="stars">★★★★☆</span>
-</div>
-
-<div class="skill">
-<span>Public Speaking</span>
-<span class="stars">★★★☆☆</span>
-</div>
-
-<div class="skill">
-<span>Data Analysis</span>
-<span class="stars">★★★☆☆</span>
-</div>
-
-<div class="skill">
-<span>English Proficiency (IELTS Equivalent ~7.0)</span>
-<span class="stars">★★★★☆</span>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Featured Projects</h2>
-<div class="grid">
-
-<div class="project">
-<h3>Brand Campaign 2024</h3>
-Strategic communication campaign with measurable engagement growth and strong audience conversion.
-</div>
-
-<div class="project">
-<h3>Trade Policy Research</h3>
-In-depth analysis of global supply chain restructuring and its impact on Vietnam.
-</div>
-
-<div class="project">
-<h3>Social Media Growth Strategy</h3>
-Achieved 150% engagement increase within 6 months through content optimization.
-</div>
-
-</div>
-</div>
-
-<div class="footer">
-Ngọc Anh • Portfolio 2026
-</div>
-
-</div>
-
-</body>
-</html>
+<h2>Design & Photography</h2>
+<div clas
