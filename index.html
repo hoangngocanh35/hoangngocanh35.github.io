@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ngoc Anh | Galaxy Portfolio</title>
+<title>Ngoc Anh | Dark Galaxy</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -12,76 +12,108 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 }
 
 body{
 font-family:'Poppins',sans-serif;
 color:white;
-background:radial-gradient(circle at 20% 20%,#ff6ec4,#7873f5,#1a0033);
 overflow-x:hidden;
+background:linear-gradient(-45deg,#0f0c29,#302b63,#24243e,#000000);
+background-size:400% 400%;
+animation:gradientMove 15s ease infinite;
+cursor:none;
 }
 
-/* BLINKING STARS */
-body::before{
-content:"✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧";
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* FLOATING STARS */
+.star{
 position:fixed;
-font-size:30px;
-opacity:0.2;
-animation:blink 4s infinite alternate;
-top:10%;
-left:5%;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation:float linear infinite;
 }
 
-@keyframes blink{
-from{opacity:0.1;}
-to{opacity:0.4;}
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-100vh);}
+}
+
+/* QUOTE BACKGROUND */
+.quote-bg{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:60px;
+opacity:0.05;
+text-align:center;
+width:80%;
+line-height:1.4;
+pointer-events:none;
+}
+
+/* INTRO SCREEN */
+#intro{
+position:fixed;
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+}
+
+#intro button{
+padding:15px 40px;
+font-size:20px;
+border:none;
+border-radius:40px;
+background:linear-gradient(45deg,#6a00ff,#ff00cc);
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px #ff00cc;
+transition:0.4s;
+}
+
+#intro button:hover{
+transform:scale(1.1);
 }
 
 section{
-padding:80px 12%;
-}
-
-h1,h2{
-font-family:'Orbitron',sans-serif;
-letter-spacing:2px;
-}
-
-.hero{
+padding:100px 12%;
 text-align:center;
-padding:120px 20px;
 }
 
 .hero img{
 width:300px;
 max-width:90%;
 border-radius:20px;
-box-shadow:0 0 40px #ff6ec4;
+box-shadow:0 0 40px #6a00ff;
 margin-bottom:30px;
 }
 
 .hero h1{
-font-size:48px;
+font-family:'Orbitron',sans-serif;
+font-size:50px;
 margin-bottom:10px;
-text-shadow:0 0 20px #ff6ec4;
-}
-
-.hero p{
-opacity:0.9;
-font-size:18px;
-}
-
-.music{
-margin-top:30px;
 }
 
 .card{
-background:rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.05);
 backdrop-filter:blur(10px);
 padding:50px;
 border-radius:25px;
-margin-top:50px;
-box-shadow:0 0 30px rgba(255,110,196,0.3);
+margin-top:60px;
 }
 
 .gallery{
@@ -101,110 +133,109 @@ transition:0.4s;
 
 .gallery img:hover{
 transform:scale(1.05);
-box-shadow:0 0 30px #ff6ec4;
-}
-
-.film-card{
-text-align:center;
-}
-
-.film-card img{
-width:100%;
-height:380px;
-object-fit:cover;
-border-radius:20px;
-box-shadow:0 0 20px #ff6ec4;
-margin-bottom:15px;
+box-shadow:0 0 30px #ff00cc;
 }
 
 footer{
-text-align:center;
 padding:40px;
-opacity:0.7;
+opacity:0.6;
 }
 
+/* SPARKLE CURSOR */
+.cursor{
+position:fixed;
+width:15px;
+height:15px;
+border-radius:50%;
+background:#ff00cc;
+pointer-events:none;
+box-shadow:0 0 20px #ff00cc;
+z-index:10000;
+}
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
-
-<!-- RANDOM chọn 1 ảnh chụp làm avatar -->
-<img src="22ea5e7ec7bc49e210ad2.jpg">
-
-<h1>Ngoc Anh</h1>
-<p>Creative Explorer • Pink Galaxy Dreamer • Visual Storyteller</p>
-
-<div class="music">
-<p>🎵 Lover vibes by Taylor Swift</p>
-<audio controls>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
-</audio>
+<div id="intro">
+<h1 style="margin-bottom:30px;">✨ Enter My Galaxy ✨</h1>
+<button onclick="enterGalaxy()">Enter</button>
 </div>
 
+<div class="quote-bg">
+"I had the time of my life fighting dragons with you."
+</div>
+
+<div class="cursor" id="cursor"></div>
+
+<section class="hero">
+<img src="22ea5e7ec7bc49e210ad2.jpg">
+<h1>Ngoc Anh</h1>
+<p>Creative Explorer • Galaxy Dreamer • Visual Storyteller</p>
+
+<p style="margin-top:20px;">🎵 Happy Vibes Playing</p>
+<audio controls>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+</audio>
 </section>
 
-<!-- ABOUT -->
 <section class="card">
 <h2>About Me</h2>
 <p style="margin-top:20px;">
-I love designing visuals, capturing moments and living inside cinematic worlds. 
-Creativity is how I express emotions, stories and imagination.
+I love designing visuals, capturing moments and exploring magical cinematic worlds.
+Creativity is how I turn imagination into reality.
 </p>
 </section>
 
-<!-- DESIGN & PHOTOGRAPHY -->
 <section class="card">
 <h2>Design & Photography</h2>
-
 <p style="margin-top:20px;">
-Tools I use:
 Adobe Illustrator • Photoshop • Lightroom • Canva • CapCut
 </p>
-
-<h3 style="margin-top:40px;">Photography Moments</h3>
 
 <div class="gallery">
 <img src="22ea5e7ec7bc49e210ad2.jpg">
 <img src="ca567e1ce6de688031cf3.jpg">
 <img src="ecf8604af98877d62e991.jpg">
 </div>
-
 </section>
 
-<!-- FAN SECTION -->
 <section class="card">
 <h2>I'm a Fan of</h2>
 
 <div class="gallery">
-
-<div class="film-card">
 <img src="harry potter.jpg">
-<h3>Harry Potter</h3>
-<p>Magic & Friendship Forever ✨</p>
-</div>
-
-<div class="film-card">
 <img src="sherlock homes.webp">
-<h3>Sherlock Holmes</h3>
-<p>Brilliant Mind & Deduction</p>
-</div>
-
-<div class="film-card">
 <img src="conan.jpg">
-<h3>Detective Conan</h3>
-<p>Mystery Never Ends</p>
 </div>
-
-</div>
-
 </section>
 
 <footer>
-© 2026 Ngoc Anh • Galaxy Pink Edition 💖✨
+© 2026 Ngoc Anh • Dark Galaxy Edition 🌌
 </footer>
+
+<script>
+function enterGalaxy(){
+document.getElementById("intro").style.display="none";
+}
+
+/* generate stars */
+for(let i=0;i<100;i++){
+let star=document.createElement("div");
+star.className="star";
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+star.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(star);
+}
+
+/* sparkle cursor */
+const cursor=document.getElementById("cursor");
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.pageX+"px";
+cursor.style.top=e.pageY+"px";
+});
+</script>
 
 </body>
 </html>
