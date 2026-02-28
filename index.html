@@ -14,7 +14,6 @@ body{
   overflow-x:hidden;
 }
 
-/* Galaxy Stars */
 body::before{
   content:"";
   position:fixed;
@@ -27,18 +26,16 @@ body::before{
 }
 
 @keyframes starsMove{
-  from{transform:translateY(0);}
-  to{transform:translateY(-300px);}
+  from{transform:translateY(0);} 
+  to{transform:translateY(-300px);} 
 }
 
-/* Flying Wands */
 .wand{
   position:fixed;
   font-size:24px;
   animation: fly 12s linear infinite;
   opacity:0.8;
 }
-
 .w1{top:20%;left:-50px;animation-delay:0s;}
 .w2{top:60%;left:-100px;animation-delay:4s;}
 .w3{top:40%;left:-150px;animation-delay:8s;}
@@ -48,19 +45,18 @@ body::before{
   to{transform:translateX(120vw) rotate(360deg);} 
 }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px;
-}
+.container{max-width:1100px;margin:auto;padding:40px 20px;}
 
-h1{
-  text-align:center;
-  font-size:42px;
-  text-shadow:0 0 20px #c084fc;
-}
-
+h1{text-align:center;font-size:42px;text-shadow:0 0 20px #c084fc;}
 .section{margin:80px 0;}
+
+.intro-text{
+  max-width:750px;
+  margin:15px auto 30px auto;
+  text-align:center;
+  opacity:0.9;
+  line-height:1.6;
+}
 
 .card{
   background:rgba(255,255,255,0.08);
@@ -84,7 +80,6 @@ h1{
 .skill{display:flex;justify-content:space-between;margin-bottom:10px;}
 .stars{color:gold;}
 
-/* FIXED PHOTO GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -101,20 +96,15 @@ h1{
 }
 
 .movie-card{text-align:center;}
+.quote{font-style:italic;font-size:14px;margin-top:8px;opacity:0.9;}
 
-.quote{
-  font-style:italic;
-  font-size:14px;
-  margin-top:8px;
-  opacity:0.9;
-}
+.spotify{margin:30px auto;text-align:center;}
 
 </style>
 </head>
 
 <body>
 
-<!-- Flying Wand Stickers -->
 <div class="wand w1">🪄</div>
 <div class="wand w2">🪄</div>
 <div class="wand w3">🪄</div>
@@ -125,26 +115,28 @@ h1{
 
 <img src="avatar.jpg" class="avatar">
 
-<p style="text-align:center;max-width:700px;margin:auto;">
-Year 3 International Economics student with strong interest in marketing strategy,
-communication activities and creative design. Experienced in youth organizations
-and media-related roles.
+<p class="intro-text">
+Year 3 International Economics student passionate about marketing strategy,
+creative communication and visual storytelling. Below is a brief journey of my
+experience, skills and cinematic inspirations that shape my creative identity.
 </p>
 
-<!-- Harry Potter Music Auto Play -->
-<!-- Spotify Love Story Embed -->
-<div style="margin-top:30px; text-align:center;">
-  <iframe style="border-radius:12px" 
-    src="https://open.spotify.com/embed/track/1qrpoAMXodY6895hGKoUpA?utm_source=generator" 
-    width="100%" height="152" frameBorder="0" 
-    allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy">
-  </iframe>
+<!-- Spotify: Prologue Book II and the Escape from the Dursleys -->
+<div class="spotify">
+<iframe style="border-radius:12px" 
+  src="https://open.spotify.com/embed/track/6XbC6K0G2Y2Z5pG0FhH0yB?utm_source=generator" 
+  width="100%" height="152" frameBorder="0" 
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+  loading="lazy">
+</iframe>
 </div>
 
-<!-- EXPERIENCE -->
 <div class="section">
 <h2>🌟 Experience Timeline</h2>
+<p class="intro-text">
+My university journey has allowed me to explore leadership, communication
+and marketing in both academic and practical environments.
+</p>
 <div class="card timeline">
   <div class="timeline-item"><strong>Year 1:</strong> Member Gen 19 – Communications Department, Youth Union</div>
   <div class="timeline-item"><strong>Year 1–2:</strong> Marketing Executive – Sao Viet Center</div>
@@ -152,9 +144,12 @@ and media-related roles.
 </div>
 </div>
 
-<!-- DESIGN -->
 <div class="section">
 <h2>🎨 Design & Photography</h2>
+<p class="intro-text">
+Creative design tools help me transform ideas into visuals. I continuously
+improve my technical proficiency through academic projects and media work.
+</p>
 <div class="card">
   <div class="skill"><span>Adobe Illustrator</span><span class="stars">⭐⭐⭐ (3.0)</span></div>
   <div class="skill"><span>Adobe Photoshop</span><span class="stars">⭐⭐⭐✨ (3.5)</span></div>
@@ -170,9 +165,12 @@ and media-related roles.
 </div>
 </div>
 
-<!-- FILMS -->
 <div class="section">
 <h2>🎬 Favorite Films</h2>
+<p class="intro-text">
+Cinema inspires my imagination and storytelling mindset. These films reflect
+my appreciation for mystery, logic and magical creativity.
+</p>
 <div class="grid">
 
 <div class="movie-card">
@@ -183,13 +181,13 @@ and media-related roles.
 
 <div class="movie-card">
 <img src="conan.jpg">
-<div class="stars">⭐⭐⭐⭐ (4.0)</div>
+<div class="stars">⭐⭐⭐ (3.0)</div>
 <div class="quote">“There is always only one truth.”</div>
 </div>
 
 <div class="movie-card">
 <img src="harry potter.jpg">
-<div class="stars">⭐⭐⭐⭐⭐ (5.0)</div>
+<div class="stars">⭐⭐⭐✨ (3.5)</div>
 <div class="quote">“It does not do to dwell on dreams and forget to live.”</div>
 </div>
 
