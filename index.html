@@ -4,184 +4,205 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ngọc Anh Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-
 body{
-background: radial-gradient(circle at 20% 20%, #1b2735, #090a0f 60%, #000);
-color:white;
-overflow-x:hidden;
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  color:white;
+  background: linear-gradient(135deg,#3b0764,#1e1b4b,#0f172a);
+  overflow-x:hidden;
 }
 
 /* Galaxy stars */
 body::before{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background-image: radial-gradient(white 1px, transparent 1px);
-background-size: 3px 3px;
-animation: moveStars 60s linear infinite;
-opacity:0.15;
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size:40px 40px;
+  animation: move 20s linear infinite;
+  opacity:0.4;
+}
+@keyframes move{
+  from{transform:translateY(0);}
+  to{transform:translateY(-200px);}
 }
 
-@keyframes moveStars{
-from{transform:translateY(0)}
-to{transform:translateY(-500px)}
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
 }
 
-.container{max-width:1100px;margin:auto;padding:70px 20px;position:relative;z-index:2}
-
-.hero{text-align:center;margin-bottom:90px}
-
-.hero img{
-width:320px;
-border-radius:25px;
-box-shadow:0 25px 70px rgba(0,0,0,0.8);
-margin-bottom:30px;
+h1{
+  text-align:center;
+  font-size:42px;
+  text-shadow:0 0 15px #c084fc;
 }
 
-.hero h1{font-size:52px;font-weight:800}
-.hero p{color:#ccc;margin-top:15px;font-size:18px}
-
-.section{margin-bottom:100px}
-.section h2{font-size:32px;margin-bottom:30px;border-left:5px solid #ffd700;padding-left:15px}
+.section{
+  margin:80px 0;
+}
 
 .card{
-background:rgba(255,255,255,0.06);
-backdrop-filter:blur(12px);
-padding:35px;
-border-radius:20px;
-box-shadow:0 20px 50px rgba(0,0,0,0.6);
-line-height:1.8;
+  background:rgba(255,255,255,0.08);
+  padding:25px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 25px rgba(168,85,247,0.5);
 }
 
-.timeline{border-left:3px solid #ffd700;padding-left:25px}
-.timeline-item{margin-bottom:30px;position:relative}
-.timeline-item::before{
-content:"";
-position:absolute;
-left:-33px;
-top:6px;
-width:14px;height:14px;
-background:#ffd700;
-border-radius:50%;
+.avatar{
+  display:block;
+  margin:40px auto;
+  width:300px;
+  border-radius:25px;
+  box-shadow:0 0 40px rgba(192,132,252,0.8);
 }
 
-.skill{display:flex;justify-content:space-between;margin-bottom:12px}
-.stars{color:gold}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
-
-.gallery img{
-width:100%;
-height:320px;
-object-fit:cover;
-border-radius:15px;
-transition:0.4s;
+.timeline{
+  border-left:3px solid gold;
+  padding-left:20px;
 }
-.gallery img:hover{transform:scale(1.05)}
+
+.timeline-item{
+  margin-bottom:20px;
+}
+
+.skill{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+
+.stars{
+  color:gold;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.gallery img,
+.movie-card img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:15px;
+}
 
 .movie-card{
-background:rgba(255,255,255,0.06);
-padding:20px;
-border-radius:20px;
-text-align:center;
+  text-align:center;
 }
-.movie-card img{
-width:100%;
-height:320px;
-object-fit:cover;
-border-radius:15px;
-margin-bottom:15px;
+
+.quote{
+  font-style:italic;
+  font-size:14px;
+  margin-top:8px;
+  opacity:0.9;
 }
-.quote{font-style:italic;color:#ccc;margin-top:10px}
 
-.footer{text-align:center;margin-top:80px;color:#888}
-
+.music-btn{
+  display:block;
+  margin:30px auto;
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  background:rgba(255,255,255,0.2);
+  color:white;
+  cursor:pointer;
+}
+.music-btn:hover{
+  background:rgba(255,255,255,0.35);
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<!-- HERO -->
-<div class="hero">
-<img src="avatar.jpg" alt="Avatar">
-<h1>Ngọc Anh</h1>
-<p>Marketing • Communications • Research • Youth Leadership</p>
-<p style="max-width:750px;margin:20px auto;color:#ddd">
-Final-year International Economics student interested in marketing strategy, global trade policy and communication leadership. Experienced in youth media activities and academic research, with a strong passion for creative design and storytelling.
-</p>
-</div>
-
-<!-- MUSIC -->
-<audio controls autoplay loop style="width:100%;margin-bottom:80px">
-<source src="love-story.mp3" type="audio/mpeg">
+<!-- MUSIC ON TOP -->
+<button class="music-btn" onclick="playMusic()">🎵 Play Love Story</button>
+<audio id="bgMusic" loop>
+  <source src="love-story.mp3" type="audio/mpeg">
 </audio>
 
-<!-- TIMELINE -->
+<div class="container">
+
+<h1>✨ Ngọc Anh – Galaxy Portfolio ✨</h1>
+
+<img src="avatar.jpg" class="avatar">
+
+<p style="text-align:center;max-width:700px;margin:auto;">
+Year 3 International Economics student with strong interest in marketing strategy,
+communication activities and creative design. Experienced in youth organizations
+and media-related roles.
+</p>
+
+<!-- EXPERIENCE -->
 <div class="section">
-<h2>Experience Timeline</h2>
+<h2>🌟 Experience Timeline</h2>
 <div class="card timeline">
-<div class="timeline-item"><strong>Year 1:</strong> Member Gen 19 – Communications Department, Youth Union</div>
-<div class="timeline-item"><strong>Year 1–2:</strong> Marketing Executive – Sao Viet Center</div>
-<div class="timeline-item"><strong>Year 2:</strong> Vice Head of Media – FTU Youth Leadership Club</div>
+  <div class="timeline-item"><strong>Year 1:</strong> Member Gen 19 – Communications Department, Youth Union</div>
+  <div class="timeline-item"><strong>Year 1–2:</strong> Marketing Executive – Sao Viet Center</div>
+  <div class="timeline-item"><strong>Year 2:</strong> Vice Head of Media – FTU Youth Leadership Club</div>
 </div>
 </div>
 
 <!-- DESIGN -->
 <div class="section">
-<h2>Design & Photography</h2>
+<h2>🎨 Design & Photography</h2>
 <div class="card">
-<div class="skill"><span>Adobe Illustrator</span><span class="stars">★★★☆☆ (3/5)</span></div>
-<div class="skill"><span>Adobe Photoshop</span><span class="stars">★★★☆☆ (3/5)</span></div>
-<div class="skill"><span>Adobe Lightroom</span><span class="stars">★★★☆☆ (3/5)</span></div>
-<div class="skill"><span>Canva</span><span class="stars">★★★☆☆ (3/5)</span></div>
-<div class="skill"><span>CapCut</span><span class="stars">★★★☆☆ (3/5)</span></div>
+  <div class="skill"><span>Adobe Illustrator</span><span class="stars">⭐⭐⭐ (3.0)</span></div>
+  <div class="skill"><span>Adobe Photoshop</span><span class="stars">⭐⭐⭐✨ (3.5)</span></div>
+  <div class="skill"><span>Adobe Lightroom</span><span class="stars">⭐⭐⭐ (3.0)</span></div>
+  <div class="skill"><span>Canva</span><span class="stars">⭐⭐⭐ (3.0)</span></div>
+  <div class="skill"><span>CapCut</span><span class="stars">⭐⭐⭐ (3.0)</span></div>
 </div>
 
-<div class="grid gallery" style="margin-top:40px">
-<img src="22ea5e7ec7bc49e210ad2.jpg">
-<img src="ca567e1ce6de688031cf3.jpg">
-<img src="ecf8604af98877d62e991.jpg">
+<div class="grid" style="margin-top:30px;">
+  <img src="22ea5e7ec7bc49e210ad2.jpg">
+  <img src="ca567e1ce6de688031cf3.jpg">
+  <img src="ecf8604af98877d62e991.jpg">
 </div>
 </div>
 
-<!-- MOVIES -->
+<!-- FILMS -->
 <div class="section">
-<h2>Favorite Movies & Series</h2>
+<h2>🎬 Favorite Films</h2>
 <div class="grid">
 
 <div class="movie-card">
 <img src="sherlock homes.webp">
-Sherlock Holmes
-<div class="quote">"When you have eliminated the impossible, whatever remains, however improbable, must be the truth."</div>
+<div class="stars">⭐⭐⭐✨ (3.5)</div>
+<div class="quote">“When you have eliminated the impossible, whatever remains, however improbable, must be the truth.”</div>
 </div>
 
 <div class="movie-card">
 <img src="conan.jpg">
-Detective Conan
-<div class="quote">"There is always only one truth."</div>
+<div class="stars">⭐⭐⭐ (3.0)</div>
+<div class="quote">“There is always only one truth.”</div>
 </div>
 
 <div class="movie-card">
 <img src="harry potter.jpg">
-Harry Potter
-<div class="quote">"It does not do to dwell on dreams and forget to live."</div>
+<div class="stars">⭐⭐⭐✨ (3.5)</div>
+<div class="quote">“It does not do to dwell on dreams and forget to live.”</div>
 </div>
 
 </div>
 </div>
 
-<div class="footer">
-Ngọc Anh • Portfolio 2026
 </div>
 
-</div>
+<script>
+function playMusic(){
+  document.getElementById("bgMusic").play();
+}
+</script>
 
 </body>
 </html>
