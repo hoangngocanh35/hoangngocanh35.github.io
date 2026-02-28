@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ngoc Anh | Creative Portfolio</title>
+<title>Ngoc Anh | Galaxy Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -17,26 +17,25 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color:white;
+background:radial-gradient(circle at 20% 20%,#ff6ec4,#7873f5,#1a0033);
 overflow-x:hidden;
 }
 
-/* floating magic particles */
+/* BLINKING STARS */
 body::before{
-content:"✨ ⚡ 🪄 🧙‍♂️ ✨ ⚡";
+content:"✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧";
 position:fixed;
-font-size:40px;
-opacity:0.07;
-top:20%;
-left:10%;
-animation:float 15s linear infinite;
+font-size:30px;
+opacity:0.2;
+animation:blink 4s infinite alternate;
+top:10%;
+left:5%;
 }
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-40px);}
-100%{transform:translateY(0);}
+@keyframes blink{
+from{opacity:0.1;}
+to{opacity:0.4;}
 }
 
 section{
@@ -50,95 +49,78 @@ letter-spacing:2px;
 
 .hero{
 text-align:center;
-padding:100px 20px;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(6px);
+padding:120px 20px;
 }
 
 .hero img{
-width:180px;
-height:180px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid #00f7ff;
-box-shadow:0 0 30px #00f7ff;
-margin-bottom:20px;
+width:300px;
+max-width:90%;
+border-radius:20px;
+box-shadow:0 0 40px #ff6ec4;
+margin-bottom:30px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:48px;
 margin-bottom:10px;
+text-shadow:0 0 20px #ff6ec4;
 }
 
 .hero p{
-opacity:0.8;
+opacity:0.9;
 font-size:18px;
 }
 
 .music{
-text-align:center;
 margin-top:30px;
 }
 
-.about, .skills, .films{
-background:rgba(255,255,255,0.05);
-border-radius:20px;
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
 padding:50px;
-margin-top:40px;
-box-shadow:0 0 20px rgba(0,0,0,0.3);
-}
-
-.skills ul{
-margin-top:20px;
-line-height:2;
+border-radius:25px;
+margin-top:50px;
+box-shadow:0 0 30px rgba(255,110,196,0.3);
 }
 
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:25px;
 margin-top:30px;
 }
 
 .gallery img{
 width:100%;
-height:280px;
+height:320px;
 object-fit:cover;
-border-radius:15px;
+border-radius:20px;
 transition:0.4s;
 }
 
 .gallery img:hover{
 transform:scale(1.05);
-box-shadow:0 0 25px #00f7ff;
+box-shadow:0 0 30px #ff6ec4;
 }
 
 .film-card{
-background:rgba(0,0,0,0.6);
-padding:20px;
-border-radius:15px;
 text-align:center;
-transition:0.4s;
 }
 
 .film-card img{
 width:100%;
-height:350px;
+height:380px;
 object-fit:cover;
-border-radius:10px;
+border-radius:20px;
+box-shadow:0 0 20px #ff6ec4;
 margin-bottom:15px;
-}
-
-.film-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #ff00ff;
 }
 
 footer{
 text-align:center;
 padding:40px;
-margin-top:60px;
-opacity:0.6;
+opacity:0.7;
 }
 
 </style>
@@ -148,41 +130,41 @@ opacity:0.6;
 
 <!-- HERO -->
 <section class="hero">
-<img src="avatar.jpg">
+
+<!-- RANDOM chọn 1 ảnh chụp làm avatar -->
+<img src="22ea5e7ec7bc49e210ad2.jpg">
+
 <h1>Ngoc Anh</h1>
-<p>Creative Explorer • Design Enthusiast • Visual Storyteller</p>
+<p>Creative Explorer • Pink Galaxy Dreamer • Visual Storyteller</p>
 
 <div class="music">
-<p>🎵 A little happiness while exploring my world</p>
-<audio controls autoplay loop>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+<p>🎵 Lover vibes by Taylor Swift</p>
+<audio controls>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
 </audio>
 </div>
+
 </section>
 
 <!-- ABOUT -->
-<section class="about">
+<section class="card">
 <h2>About Me</h2>
 <p style="margin-top:20px;">
-I am passionate about design, photography and cinematic storytelling. 
-I enjoy turning ideas into visuals and capturing emotions through images. 
-Creativity for me is not just a skill — it is a way of expressing who I am.
+I love designing visuals, capturing moments and living inside cinematic worlds. 
+Creativity is how I express emotions, stories and imagination.
 </p>
 </section>
 
-<!-- SKILLS -->
-<section class="skills">
+<!-- DESIGN & PHOTOGRAPHY -->
+<section class="card">
 <h2>Design & Photography</h2>
 
-<ul>
-<li>🎨 Adobe Illustrator</li>
-<li>🖌 Adobe Photoshop</li>
-<li>📷 Adobe Lightroom</li>
-<li>✨ Canva</li>
-<li>🎬 CapCut</li>
-</ul>
+<p style="margin-top:20px;">
+Tools I use:
+Adobe Illustrator • Photoshop • Lightroom • Canva • CapCut
+</p>
 
-<h3 style="margin-top:40px;">Photography Works</h3>
+<h3 style="margin-top:40px;">Photography Moments</h3>
 
 <div class="gallery">
 <img src="22ea5e7ec7bc49e210ad2.jpg">
@@ -192,28 +174,28 @@ Creativity for me is not just a skill — it is a way of expressing who I am.
 
 </section>
 
-<!-- FILMS -->
-<section class="films">
-<h2>Film Inspirations</h2>
+<!-- FAN SECTION -->
+<section class="card">
+<h2>I'm a Fan of</h2>
 
 <div class="gallery">
 
 <div class="film-card">
-<img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Sherlock_titlecard.jpg">
-<h3>Sherlock Holmes</h3>
-<p>Mystery • Intelligence • Deduction</p>
-</div>
-
-<div class="film-card">
-<img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Detective_Conan_volume_1_cover.jpg">
-<h3>Detective Conan</h3>
-<p>Observation • Strategy • Curiosity</p>
-</div>
-
-<div class="film-card">
-<img src="https://upload.wikimedia.org/wikipedia/en/c/c1/Harry_Potter_and_the_Philosopher%27s_Stone.jpg">
+<img src="harry potter.jpg">
 <h3>Harry Potter</h3>
-<p>Magic • Loyalty • Courage</p>
+<p>Magic & Friendship Forever ✨</p>
+</div>
+
+<div class="film-card">
+<img src="sherlock homes.webp">
+<h3>Sherlock Holmes</h3>
+<p>Brilliant Mind & Deduction</p>
+</div>
+
+<div class="film-card">
+<img src="conan.jpg">
+<h3>Detective Conan</h3>
+<p>Mystery Never Ends</p>
 </div>
 
 </div>
@@ -221,7 +203,7 @@ Creativity for me is not just a skill — it is a way of expressing who I am.
 </section>
 
 <footer>
-© 2026 Ngoc Anh | Magical Creative Portfolio ✨
+© 2026 Ngoc Anh • Galaxy Pink Edition 💖✨
 </footer>
 
 </body>
