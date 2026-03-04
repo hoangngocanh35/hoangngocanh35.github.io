@@ -19,7 +19,7 @@ body{
   color:#333;
 }
 
-/* NAVBAR */
+/* NAVBAR FIX */
 
 .navbar{
   position:fixed;
@@ -27,27 +27,42 @@ body{
   width:100%;
   background:white;
   box-shadow:0 2px 12px rgba(0,0,0,0.05);
-  padding:18px 0;
   z-index:1000;
 }
 
-.navbar ul{
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-weight:700;
+  color:#db2777;
+  font-size:18px;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.nav-links{
   list-style:none;
   display:flex;
-  justify-content:center;
-  gap:40px;
+  gap:30px;
   margin:0;
   padding:0;
 }
 
-.navbar a{
+.nav-links a{
   text-decoration:none;
   color:#ec4899;
   font-weight:500;
   transition:0.3s;
 }
 
-.navbar a:hover{
+.nav-links a:hover{
   opacity:0.6;
 }
 
@@ -93,6 +108,17 @@ p{
   width:100%;
   border-radius:20px;
   box-shadow:0 15px 35px rgba(236,72,153,0.15);
+}
+
+/* MUSIC PLAYER */
+
+.music-box{
+  margin-top:30px;
+  background:#fff0f6;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(236,72,153,0.08);
+  text-align:center;
 }
 
 /* CARD */
@@ -150,10 +176,38 @@ p{
   box-shadow:0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* ACHIEVEMENTS */
+/* CONTACT FIX */
 
-.achievement{
-  margin-bottom:20px;
+.contact-wrapper{
+  background:#fff0f6;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(236,72,153,0.08);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:30px;
+}
+
+.contact-item{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(236,72,153,0.05);
+  text-align:center;
+}
+
+.contact-title{
+  font-weight:600;
+  margin-bottom:10px;
+  color:#db2777;
+}
+
+.contact-info{
+  color:#555;
 }
 
 /* RESPONSIVE */
@@ -166,6 +220,9 @@ p{
   .skills-grid{
     grid-template-columns:1fr;
   }
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 </style>
@@ -175,9 +232,7 @@ p{
 
 <nav class="navbar">
   <div class="nav-container">
-
     <div class="logo">HOANG NGOC ANH</div>
-
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#academic">Academic</a></li>
@@ -187,7 +242,6 @@ p{
       <li><a href="#passion">Passion</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
   </div>
 </nav>
 
@@ -209,141 +263,20 @@ Throughout my academic journey, I have developed analytical thinking, research c
 I aspire to grow in dynamic environments where I can apply my knowledge, enhance practical skills, 
 and contribute positively to organizational goals.
 </p>
+
+<!-- MUSIC ADDED HERE -->
+
+<div class="music-box">
+<p><strong>Now Playing 🎵 Lover – Taylor Swift</strong></p>
+<audio controls>
+  <source src="lover.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</div>
+
 </div>
 
 <img src="avatar.jpg" class="avatar">
-</div>
-
-<!-- ACADEMIC -->
-
-<div class="section" id="academic">
-<h2>Academic Background</h2>
-<div class="card">
-<p><strong>Foreign Trade University (FTU)</strong></p>
-<p>Major: International Economics</p>
-<p>Year 3 Student</p>
-<p>Career Orientation: Marketing Strategy – Communication – Analytical Thinking</p>
-</div>
-</div>
-
-<!-- EXPERIENCE -->
-
-<div class="section" id="experience">
-<h2>Professional Experience</h2>
-<div class="card timeline">
-
-<div class="timeline-item">
-<strong>Member Gen 19</strong><br>
-Communications Department – FTU Youth Union
-</div>
-
-<div class="timeline-item">
-<strong>Marketing Executive</strong><br>
-Sao Viet Center (Year 1–2)
-</div>
-
-<div class="timeline-item">
-<strong>Vice Head of Communication</strong><br>
-FTU Youth Leadership Club (Year 2)
-</div>
-  
-
-</div>
-</div>
-
-<!-- SKILLS -->
-
-<div class="section" id="skills">
-<h2>Skills</h2>
-
-<div class="skills-grid">
-
-<div class="card">
-<h3>Creative & Design</h3>
-<div class="skill"><span>Adobe Illustrator</span><span>3.0/5.0</span></div>
-<div class="skill"><span>Adobe Photoshop</span><span>3.5/5.0</span></div>
-<div class="skill"><span>Adobe Lightroom</span><span>3.0/5.0</span></div>
-<div class="skill"><span>Canva</span><span>4.0/5.0</span></div>
-<div class="skill"><span>CapCut</span><span>4.0/5.0</span></div>
-</div>
-
-<div class="card">
-<h3>Data & Office Tools</h3>
-<div class="skill"><span>Microsoft Excel</span><span>4.0/5.0</span></div>
-<div class="skill"><span>Microsoft Word</span><span>4.5/5.0</span></div>
-<div class="skill"><span>Microsoft PowerPoint</span><span>4.5/5.0</span></div>
-<div class="skill"><span>Microsoft Access</span><span>3.5/5.0</span></div>
-<div class="skill"><span>SQL</span><span>3.5/5.0</span></div>
-</div>
-
-</div>
-</div>
-
-<!-- ACHIEVEMENTS -->
-
-<div class="section" id="achievements">
-<h2>Outstanding Achievements</h2>
-
-<div class="card">
-
-<div class="achievement">
-<strong>Research Presenter – International Conference (10/2025)</strong><br>
-Presented research at the conference:
-“International Mobility for Economic Development in an Era of Uncertainty and Digital Transformation”
-organized at Foreign Trade University.
-</div>
-
-<div class="achievement">
-🥇 First Prize – “We, The Icebreakers 2023”
-</div>
-
-<div class="achievement">
-🎖 Encouragement Prize – “Phóng sự Nhập học”
-</div>
-
-</div>
-</div>
-
-<!-- PASSION -->
-
-<div class="section" id="passion">
-<h2>Passion</h2>
-
-<div class="card">
-<p><strong>Photography:</strong> Capturing visual stories through light, perspective and composition.</p>
-</div>
-
-<div class="grid">
-<img src="22ea5e7ec7bc49e210ad2.jpg">
-<img src="ca567e1ce6de688031cf3.jpg">
-<img src="ecf8604af98877d62e991.jpg">
-</div>
-
-<div class="card" style="margin-top:40px;">
-<p><strong>Cinema:</strong> I appreciate films that emphasize logic, mystery and imagination</p>
-</div>
-
-  </p>
-<div class="grid">
-
-<div class="movie-card">
-<img src="sherlock homes.webp">
-<div class="stars">⭐⭐⭐✨ (3.5)</div>
-<div class="quote">“When you have eliminated the impossible, whatever remains, however improbable, must be the truth.”</div>
-</div>
-
-<div class="movie-card">
-<img src="conan.jpg">
-<div class="stars">⭐⭐⭐⭐ (4.0)</div>
-<div class="quote">“There is always only one truth.”</div>
-</div>
-
-<div class="movie-card">
-<img src="harry potter.jpg">
-<div class="stars">⭐⭐⭐⭐⭐ (5.0)</div>
-<div class="quote">“It does not do to dwell on dreams and forget to live.”</div>
-</div>
-
 </div>
 
 <!-- CONTACT -->
@@ -353,7 +286,7 @@ organized at Foreign Trade University.
 
 <div class="contact-wrapper">
 
-<p>I am open to internship opportunities and collaborative projects.</p>
+<p>I am open to internship opportunities and collaborative projects. Feel free to reach out to me for professional collaborations or academic discussions.</p>
 
 <div class="contact-grid">
 
@@ -368,7 +301,6 @@ organized at Foreign Trade University.
 </div>
 
 </div>
-
 </div>
 
 </section>
