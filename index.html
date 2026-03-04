@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HOANG NGOC ANH | Portfolio</title>
+<title>Ngọc Anh | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-html{scroll-behavior:smooth;}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
@@ -26,23 +27,15 @@ body{
   width:100%;
   background:white;
   box-shadow:0 2px 12px rgba(0,0,0,0.05);
-  padding:18px 60px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  padding:18px 0;
   z-index:1000;
-}
-
-.logo{
-  font-weight:700;
-  color:#db2777;
-  letter-spacing:1px;
 }
 
 .navbar ul{
   list-style:none;
   display:flex;
-  gap:35px;
+  justify-content:center;
+  gap:40px;
   margin:0;
   padding:0;
 }
@@ -54,17 +47,21 @@ body{
   transition:0.3s;
 }
 
-.navbar a:hover{opacity:0.6;}
+.navbar a:hover{
+  opacity:0.6;
+}
 
 /* CONTAINER */
 
 .container{
   max-width:1100px;
   margin:auto;
-  padding:140px 20px 80px 20px;
+  padding:120px 20px 60px 20px;
 }
 
-.section{margin:110px 0;}
+.section{
+  margin:100px 0;
+}
 
 h1{
   font-size:42px;
@@ -98,12 +95,6 @@ p{
   box-shadow:0 15px 35px rgba(236,72,153,0.15);
 }
 
-/* SPOTIFY */
-
-.music{
-  margin-top:30px;
-}
-
 /* CARD */
 
 .card{
@@ -113,50 +104,68 @@ p{
   box-shadow:0 10px 25px rgba(236,72,153,0.08);
 }
 
-/* CONTACT */
+/* TIMELINE */
 
-.contact-wrapper{
-  background:linear-gradient(135deg,#fff0f6,#ffe4ec);
-  padding:50px;
-  border-radius:30px;
-  box-shadow:0 15px 30px rgba(236,72,153,0.1);
-  text-align:center;
+.timeline{
+  border-left:3px solid #ec4899;
+  padding-left:20px;
 }
 
-.contact-grid{
+.timeline-item{
+  margin-bottom:20px;
+}
+
+/* SKILLS */
+
+.skills-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:40px;
+  gap:30px;
+}
+
+.skill{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.skill span:last-child{
+  color:#ec4899;
+}
+
+/* GRID IMAGES */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
   margin-top:30px;
 }
 
-.contact-item{
-  background:white;
-  padding:25px;
+.grid img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
   border-radius:20px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
-  transition:0.3s;
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
 }
 
-.contact-item:hover{
-  transform:translateY(-5px);
-}
+/* ACHIEVEMENTS */
 
-.contact-title{
-  font-weight:600;
-  color:#ec4899;
-  margin-bottom:10px;
-}
-
-.contact-info{
-  font-weight:500;
+.achievement{
+  margin-bottom:20px;
 }
 
 /* RESPONSIVE */
 
 @media(max-width:900px){
-  .intro{grid-template-columns:1fr;text-align:center;}
-  .contact-grid{grid-template-columns:1fr;}
+  .intro{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 </style>
@@ -165,7 +174,6 @@ p{
 <body>
 
 <nav class="navbar">
-<div class="logo">HOANG NGOC ANH</div>
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#academic">Academic</a></li>
@@ -179,12 +187,11 @@ p{
 
 <div class="container">
 
-<!-- ABOUT -->
+<!-- INTRO -->
 
 <div class="section intro" id="about">
 <div>
-<h1>HOANG NGOC ANH</h1>
-
+<h1>Ngọc Anh</h1>
 <p>
 I am currently a third-year student majoring in International Economics at Foreign Trade University. 
 With a strong interest in marketing strategy and brand communication, I am constantly seeking opportunities 
@@ -196,48 +203,166 @@ Throughout my academic journey, I have developed analytical thinking, research c
 I aspire to grow in dynamic environments where I can apply my knowledge, enhance practical skills, 
 and contribute positively to organizational goals.
 </p>
-
-<div class="music">
-<iframe style="border-radius:12px"
-src="https://open.spotify.com/embed/track/1dGr1c8CrMLDpV6mPbImSI"
-width="100%" height="90" frameBorder="0"
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-</iframe>
-</div>
-
 </div>
 
 <img src="avatar.jpg" class="avatar">
+</div>
+
+<!-- ACADEMIC -->
+
+<div class="section" id="academic">
+<h2>Academic Background</h2>
+<div class="card">
+<p><strong>Foreign Trade University (FTU)</strong></p>
+<p>Major: International Economics</p>
+<p>Year 3 Student</p>
+<p>Career Orientation: Marketing Strategy – Communication – Analytical Thinking</p>
+</div>
+</div>
+
+<!-- EXPERIENCE -->
+
+<div class="section" id="experience">
+<h2>Professional Experience</h2>
+<div class="card timeline">
+
+<div class="timeline-item">
+<strong>Member Gen 19</strong><br>
+Communications Department – Youth Union
+</div>
+
+<div class="timeline-item">
+<strong>Marketing Executive</strong><br>
+Sao Viet Center (Year 1–2)
+</div>
+
+<div class="timeline-item">
+<strong>Vice Head of Media</strong><br>
+FTU Youth Leadership Club (Year 2)
+</div>
+
+<div class="timeline-item">
+<strong>Vice Head of Communications</strong><br>
+Young Political Theory Club – FTU
+</div>
+
+</div>
+</div>
+
+<!-- SKILLS -->
+
+<div class="section" id="skills">
+<h2>Skills</h2>
+
+<div class="skills-grid">
+
+<div class="card">
+<h3>Creative & Design</h3>
+<div class="skill"><span>Adobe Illustrator</span><span>3.0</span></div>
+<div class="skill"><span>Adobe Photoshop</span><span>3.5</span></div>
+<div class="skill"><span>Adobe Lightroom</span><span>3.0</span></div>
+<div class="skill"><span>Canva</span><span>3.0</span></div>
+<div class="skill"><span>CapCut</span><span>3.0</span></div>
+</div>
+
+<div class="card">
+<h3>Business & Marketing</h3>
+<div class="skill"><span>Marketing Strategy</span><span>3.5</span></div>
+<div class="skill"><span>Market Research</span><span>3.0</span></div>
+<div class="skill"><span>Content Planning</span><span>3.5</span></div>
+<div class="skill"><span>Business Communication</span><span>3.5</span></div>
+<div class="skill"><span>Analytical Thinking</span><span>3.0</span></div>
+</div>
+
+</div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+
+<div class="section" id="achievements">
+<h2>Outstanding Achievements</h2>
+
+<div class="card">
+
+<div class="achievement">
+<strong>Research Presenter – International Conference (10/2025)</strong><br>
+Presented research at the conference:
+“International Mobility for Economic Development in an Era of Uncertainty and Digital Transformation”
+organized at Foreign Trade University.
+</div>
+
+<div class="achievement">
+🥇 First Prize – “We, The Icebreakers 2023”
+</div>
+
+<div class="achievement">
+🎖 Encouragement Prize – “Phóng sự Nhập học”
+</div>
+
+</div>
+</div>
+
+<!-- PASSION -->
+
+<div class="section" id="passion">
+<h2>Passion</h2>
+
+<div class="card">
+<p><strong>Photography:</strong> Capturing visual stories through light, perspective and composition.</p>
+</div>
+
+<div class="grid">
+<img src="22ea5e7ec7bc49e210ad2.jpg">
+<img src="ca567e1ce6de688031cf3.jpg">
+<img src="ecf8604af98877d62e991.jpg">
+</div>
+
+<div class="card" style="margin-top:40px;">
+<p><strong>Cinema:</strong> I appreciate films that emphasize logic, mystery and imagination</p>
+</div>
+
+  </p>
+<div class="grid">
+
+<div class="movie-card">
+<img src="sherlock homes.webp">
+<div class="stars">⭐⭐⭐✨ (3.5)</div>
+<div class="quote">“When you have eliminated the impossible, whatever remains, however improbable, must be the truth.”</div>
+</div>
+
+<div class="movie-card">
+<img src="conan.jpg">
+<div class="stars">⭐⭐⭐⭐ (4.0)</div>
+<div class="quote">“There is always only one truth.”</div>
+</div>
+
+<div class="movie-card">
+<img src="harry potter.jpg">
+<div class="stars">⭐⭐⭐⭐⭐ (5.0)</div>
+<div class="quote">“It does not do to dwell on dreams and forget to live.”</div>
+</div>
+
 </div>
 
 <!-- CONTACT -->
 
 <section class="section" id="contact">
 <h2>Contact</h2>
-
-<div class="contact-wrapper">
-
-<p>I am open to internship opportunities and collaborative projects.</p>
-
-<div class="contact-grid">
-
-<div class="contact-item">
-<div class="contact-title">📧 Email</div>
+<div class="contact-box">
+<div>
+<div class="contact-title">Email</div>
 <div class="contact-info">anhhn.fyu@gmail.com</div>
 </div>
-
-<div class="contact-item">
-<div class="contact-title">📱 Phone</div>
+<div>
+<div class="contact-title">Phone</div>
 <div class="contact-info">0343185475</div>
 </div>
-
 </div>
-
-</div>
-
 </section>
 
 </div>
 
+</body>
+</html>
 </body>
 </html>
