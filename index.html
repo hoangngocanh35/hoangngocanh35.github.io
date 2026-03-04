@@ -3,20 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ngọc Anh | Portfolio</title>
+<title>Hoang Ngoc Anh | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-html{
-  scroll-behavior:smooth;
-}
+
+html{scroll-behavior:smooth;}
 
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:#fff;
+  background:#ffffff;
   color:#333;
+  overflow-x:hidden;
+}
+
+/* FLOWER BACKGROUND */
+
+body::before{
+  content:"🌸";
+  position:fixed;
+  font-size:200px;
+  opacity:0.04;
+  top:30%;
+  left:-10%;
+  animation: float 30s linear infinite;
+}
+
+@keyframes float{
+  from{transform:translateX(0);}
+  to{transform:translateX(120vw);}
 }
 
 /* NAVBAR */
@@ -27,58 +44,50 @@ body{
   width:100%;
   background:white;
   box-shadow:0 2px 12px rgba(0,0,0,0.05);
-  padding:18px 0;
+  padding:18px 40px;
   z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.navbar ul{
+.logo{
+  font-weight:700;
+  color:#db2777;
+  letter-spacing:1px;
+}
+
+.nav-links{
   list-style:none;
   display:flex;
-  justify-content:center;
-  gap:40px;
+  gap:30px;
   margin:0;
   padding:0;
 }
 
-.navbar a{
+.nav-links a{
   text-decoration:none;
   color:#ec4899;
   font-weight:500;
   transition:0.3s;
 }
 
-.navbar a:hover{
-  opacity:0.6;
-}
+.nav-links a:hover{opacity:0.6;}
 
-/* CONTAINER */
+/* GENERAL */
 
 .container{
   max-width:1100px;
   margin:auto;
-  padding:120px 20px 60px 20px;
+  padding:140px 20px 60px 20px;
 }
 
-.section{
-  margin:100px 0;
-}
+.section{margin:100px 0;}
 
-h1{
-  font-size:42px;
-  margin-bottom:20px;
-  color:#db2777;
-}
+h1{font-size:42px;color:#db2777;}
+h2{color:#db2777;margin-bottom:25px;}
 
-h2{
-  font-size:28px;
-  margin-bottom:25px;
-  color:#db2777;
-}
-
-p{
-  line-height:1.7;
-  opacity:0.85;
-}
+p{line-height:1.7;opacity:0.85;}
 
 /* INTRO */
 
@@ -111,9 +120,7 @@ p{
   padding-left:20px;
 }
 
-.timeline-item{
-  margin-bottom:20px;
-}
+.timeline-item{margin-bottom:20px;}
 
 /* SKILLS */
 
@@ -131,9 +138,10 @@ p{
 
 .skill span:last-child{
   color:#ec4899;
+  font-weight:500;
 }
 
-/* GRID IMAGES */
+/* GRID */
 
 .grid{
   display:grid;
@@ -150,22 +158,40 @@ p{
   box-shadow:0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* ACHIEVEMENTS */
+/* CONTACT */
 
-.achievement{
-  margin-bottom:20px;
+.contact-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  text-align:center;
+  padding:40px;
+  border-radius:25px;
+  background:#fff0f6;
+  box-shadow:0 10px 25px rgba(236,72,153,0.08);
+}
+
+.contact-box div{
+  font-size:18px;
+}
+
+.contact-title{
+  font-weight:600;
+  margin-bottom:10px;
+  color:#ec4899;
+}
+
+.contact-info{
+  font-weight:500;
+  color:#333;
 }
 
 /* RESPONSIVE */
 
 @media(max-width:900px){
-  .intro{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-  .skills-grid{
-    grid-template-columns:1fr;
-  }
+  .intro{grid-template-columns:1fr;text-align:center;}
+  .skills-grid{grid-template-columns:1fr;}
+  .contact-box{grid-template-columns:1fr;}
 }
 
 </style>
@@ -174,144 +200,59 @@ p{
 <body>
 
 <nav class="navbar">
-<ul>
+<div class="logo">HOANG NGOC ANH</div>
+<ul class="nav-links">
 <li><a href="#about">About</a></li>
 <li><a href="#academic">Academic</a></li>
 <li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#achievements">Achievements</a></li>
 <li><a href="#passion">Passion</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
 <div class="container">
 
-<!-- INTRO -->
+<!-- ABOUT -->
 
 <div class="section intro" id="about">
 <div>
-<h1>Ngọc Anh</h1>
+<h1>Hoang Ngoc Anh</h1>
 <p>
 Year 3 International Economics student at Foreign Trade University,
-passionate about marketing strategy, communication and creative storytelling.
+passionate about marketing strategy and communication.
 </p>
+
+<div style="margin-top:30px; max-width:400px;">
+<iframe style="border-radius:12px" 
+src="https://open.spotify.com/embed/track/1dGr1c8CrMLDpV6mPbImSI?utm_source=generator" 
+width="100%" height="80" frameBorder="0"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+</div>
+
 </div>
 
 <img src="avatar.jpg" class="avatar">
 </div>
 
-<!-- ACADEMIC -->
+<!-- CONTACT -->
 
-<div class="section" id="academic">
-<h2>Academic Background</h2>
-<div class="card">
-<p><strong>Foreign Trade University (FTU)</strong></p>
-<p>Major: International Economics</p>
-<p>Year 3 Student</p>
-<p>Career Orientation: Marketing Strategy – Communication – Analytical Thinking</p>
-</div>
-</div>
+<div class="section" id="contact">
+<h2>Contact</h2>
+<p>I am open to internship opportunities and collaborative projects.</p>
 
-<!-- EXPERIENCE -->
-
-<div class="section" id="experience">
-<h2>Professional Experience</h2>
-<div class="card timeline">
-
-<div class="timeline-item">
-<strong>Member Gen 19</strong><br>
-Communications Department – Youth Union
+<div class="contact-box">
+<div>
+<div class="contact-title">Email</div>
+<div class="contact-info">anhhn.fyu@gmail.com</div>
 </div>
 
-<div class="timeline-item">
-<strong>Marketing Executive</strong><br>
-Sao Viet Center (Year 1–2)
+<div>
+<div class="contact-title">Phone</div>
+<div class="contact-info">0343185475</div>
 </div>
-
-<div class="timeline-item">
-<strong>Vice Head of Media</strong><br>
-FTU Youth Leadership Club (Year 2)
-</div>
-
-<div class="timeline-item">
-<strong>Vice Head of Communications</strong><br>
-Young Political Theory Club – FTU
-</div>
-
-</div>
-</div>
-
-<!-- SKILLS -->
-
-<div class="section" id="skills">
-<h2>Skills</h2>
-
-<div class="skills-grid">
-
-<div class="card">
-<h3>Creative & Design</h3>
-<div class="skill"><span>Adobe Illustrator</span><span>3.0</span></div>
-<div class="skill"><span>Adobe Photoshop</span><span>3.5</span></div>
-<div class="skill"><span>Adobe Lightroom</span><span>3.0</span></div>
-<div class="skill"><span>Canva</span><span>3.0</span></div>
-<div class="skill"><span>CapCut</span><span>3.0</span></div>
-</div>
-
-<div class="card">
-<h3>Business & Marketing</h3>
-<div class="skill"><span>Marketing Strategy</span><span>3.5</span></div>
-<div class="skill"><span>Market Research</span><span>3.0</span></div>
-<div class="skill"><span>Content Planning</span><span>3.5</span></div>
-<div class="skill"><span>Business Communication</span><span>3.5</span></div>
-<div class="skill"><span>Analytical Thinking</span><span>3.0</span></div>
-</div>
-
-</div>
-</div>
-
-<!-- ACHIEVEMENTS -->
-
-<div class="section" id="achievements">
-<h2>Outstanding Achievements</h2>
-
-<div class="card">
-
-<div class="achievement">
-<strong>Research Presenter – International Conference (10/2025)</strong><br>
-Presented research at the conference:
-“International Mobility for Economic Development in an Era of Uncertainty and Digital Transformation”
-organized at Foreign Trade University.
-</div>
-
-<div class="achievement">
-🥇 First Prize – “We, The Icebreakers 2023”
-</div>
-
-<div class="achievement">
-🎖 Encouragement Prize – “Phóng sự Nhập học”
-</div>
-
-</div>
-</div>
-
-<!-- PASSION -->
-
-<div class="section" id="passion">
-<h2>Passion</h2>
-
-<div class="card">
-<p><strong>Photography:</strong> Capturing visual stories through light, perspective and composition.</p>
-</div>
-
-<div class="grid">
-<img src="22ea5e7ec7bc49e210ad2.jpg">
-<img src="ca567e1ce6de688031cf3.jpg">
-<img src="ecf8604af98877d62e991.jpg">
-</div>
-
-<div class="card" style="margin-top:40px;">
-<p><strong>Cinema:</strong> I appreciate films that emphasize logic, mystery and imagination such as
-Sherlock Holmes, Conan and Harry Potter, which inspire my creative thinking approach.</p>
 </div>
 
 </div>
