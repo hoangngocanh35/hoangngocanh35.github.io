@@ -20,7 +20,6 @@ body{
 }
 
 /* NAVBAR */
-
 .navbar{
   position:fixed;
   top:0;
@@ -64,7 +63,6 @@ body{
 .nav-links a:hover{opacity:0.6;}
 
 /* CONTAINER */
-
 .container{
   max-width:1100px;
   margin:auto;
@@ -75,11 +73,9 @@ body{
 
 h1{font-size:42px;margin-bottom:20px;color:#db2777;}
 h2{font-size:28px;margin-bottom:25px;color:#db2777;}
-
 p{line-height:1.7;opacity:0.85;}
 
 /* INTRO */
-
 .intro{
   display:grid;
   grid-template-columns:1fr 350px;
@@ -94,18 +90,16 @@ p{line-height:1.7;opacity:0.85;}
 }
 
 /* MUSIC */
-
 .music-box{
-  margin-top:30px;
-  background:#fff0f6;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 8px 20px rgba(236,72,153,0.08);
+  margin-top:35px;
+  background:linear-gradient(135deg,#ffe4ec,#fff0f6);
+  padding:25px;
+  border-radius:25px;
+  box-shadow:0 15px 30px rgba(236,72,153,0.15);
   text-align:center;
 }
 
 /* CARD */
-
 .card{
   background:#fff0f6;
   padding:30px;
@@ -114,39 +108,32 @@ p{line-height:1.7;opacity:0.85;}
 }
 
 /* TIMELINE */
-
 .timeline{
   border-left:3px solid #ec4899;
   padding-left:20px;
 }
-
 .timeline-item{margin-bottom:20px;}
 
 /* SKILLS */
-
 .skills-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:30px;
 }
-
 .skill{
   display:flex;
   justify-content:space-between;
   margin-bottom:12px;
 }
-
 .skill span:last-child{color:#ec4899;}
 
-/* GRID IMAGES */
-
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:25px;
   margin-top:30px;
 }
-
 .grid img{
   width:100%;
   height:300px;
@@ -155,8 +142,7 @@ p{line-height:1.7;opacity:0.85;}
   box-shadow:0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* MOVIE CARD */
-
+/* MOVIE */
 .movie-card{
   background:#fff0f6;
   padding:15px;
@@ -164,33 +150,28 @@ p{line-height:1.7;opacity:0.85;}
   box-shadow:0 10px 20px rgba(236,72,153,0.08);
   text-align:center;
 }
-
 .movie-card img{
   width:100%;
   height:280px;
   object-fit:cover;
   border-radius:15px;
 }
-
 .stars{margin-top:10px;color:#db2777;}
 .quote{font-size:14px;margin-top:8px;opacity:0.8;}
 
 /* CONTACT */
-
 .contact-wrapper{
   background:#fff0f6;
   padding:40px;
   border-radius:20px;
   box-shadow:0 10px 25px rgba(236,72,153,0.08);
 }
-
 .contact-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:30px;
   margin-top:30px;
 }
-
 .contact-item{
   background:white;
   padding:25px;
@@ -198,23 +179,18 @@ p{line-height:1.7;opacity:0.85;}
   box-shadow:0 5px 15px rgba(236,72,153,0.05);
   text-align:center;
 }
-
 .contact-title{
   font-weight:600;
   margin-bottom:10px;
   color:#db2777;
 }
-
 .contact-info{color:#555;}
-
-/* RESPONSIVE */
 
 @media(max-width:900px){
   .intro{grid-template-columns:1fr;text-align:center;}
   .skills-grid{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr;}
 }
-
 </style>
 </head>
 
@@ -238,42 +214,33 @@ p{line-height:1.7;opacity:0.85;}
 <div class="container">
 
 <!-- ABOUT -->
-
 <div class="section intro" id="about">
+
 <div>
 <h1>Ngọc Anh</h1>
 
-<p>
-I am currently a third-year student majoring in International Economics at Foreign Trade University. 
-I am passionate about marketing strategy, branding and communication, especially in digital environments.
-</p>
+<p>I am currently a third-year student majoring in International Economics at Foreign Trade University.</p>
 
-<p>
-My academic journey has helped me build strong analytical thinking, teamwork and research skills. 
-I aim to grow in dynamic professional environments where creativity meets strategic planning.
-</p>
-</div>
-  
+<p>I am passionate about marketing strategy, branding and communication in digital environments.</p>
+
 <div class="music-box">
-
 <p style="font-weight:600;color:#db2777;margin-bottom:15px;">
 Now Playing 🎵 Lover – Taylor Swift
 </p>
-
 <iframe style="border-radius:20px" 
-src="https://open.spotify.com/embed/track/1dGr1c8CrMLDpV6mPbImSI?utm_source=generator" 
-width="100%" 
-height="152" 
-frameBorder="0" 
-allowfullscreen="" 
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-loading="lazy">
+src="https://open.spotify.com/embed/track/1dGr1c8CrMLDpV6mPbImSI"
+width="100%" height="152" frameborder="0"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
 </iframe>
+</div>
 
 </div>
 
 <img src="avatar.jpg" class="avatar">
-</div>
+
+</div> <!-- ĐÓNG INTRO -->
+
+<!-- TỪ ĐÂY TRỞ XUỐNG GIỮ Y NGUYÊN CÁC SECTION CỦA BÀ -->
 
 <!-- ACADEMIC -->
 
