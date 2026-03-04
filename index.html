@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hoang Ngoc Anh | Portfolio</title>
+<title>Ngọc Anh | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-html{scroll-behavior:smooth;}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:#ffffff;
+  background:#fff;
   color:#333;
 }
 
@@ -24,66 +25,58 @@ body{
   position:fixed;
   top:0;
   width:100%;
-  background:#ec4899;
-  padding:18px 60px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  background:white;
+  box-shadow:0 2px 12px rgba(0,0,0,0.05);
+  padding:18px 0;
   z-index:1000;
 }
 
-.logo{
-  font-weight:700;
-  font-size:18px;
-  color:white;
-  letter-spacing:1px;
-}
-
-.nav-links{
+.navbar ul{
   list-style:none;
   display:flex;
-  gap:28px;
+  justify-content:center;
+  gap:40px;
   margin:0;
   padding:0;
-  flex-wrap:wrap;
 }
 
-.nav-links a{
+.navbar a{
   text-decoration:none;
-  color:white;
+  color:#ec4899;
   font-weight:500;
-  font-size:14px;
   transition:0.3s;
 }
 
-.nav-links a:hover{
-  opacity:0.7;
+.navbar a:hover{
+  opacity:0.6;
 }
 
-/* GENERAL */
+/* CONTAINER */
 
 .container{
   max-width:1100px;
   margin:auto;
-  padding:140px 20px 80px 20px;
+  padding:120px 20px 60px 20px;
 }
 
 .section{
-  margin:120px 0;
+  margin:100px 0;
 }
 
 h1{
-  font-size:44px;
-  color:#ec4899;
+  font-size:42px;
+  margin-bottom:20px;
+  color:#db2777;
 }
 
 h2{
-  color:#ec4899;
-  margin-bottom:30px;
+  font-size:28px;
+  margin-bottom:25px;
+  color:#db2777;
 }
 
 p{
-  line-height:1.8;
+  line-height:1.7;
   opacity:0.85;
 }
 
@@ -91,15 +84,15 @@ p{
 
 .intro{
   display:grid;
-  grid-template-columns:1fr 380px;
+  grid-template-columns:1fr 350px;
   gap:60px;
   align-items:center;
 }
 
 .avatar{
   width:100%;
-  border-radius:25px;
-  box-shadow:0 20px 40px rgba(236,72,153,0.15);
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(236,72,153,0.15);
 }
 
 /* CARD */
@@ -107,19 +100,19 @@ p{
 .card{
   background:#fff0f6;
   padding:30px;
-  border-radius:25px;
-  box-shadow:0 15px 30px rgba(236,72,153,0.08);
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(236,72,153,0.08);
 }
 
 /* TIMELINE */
 
 .timeline{
   border-left:3px solid #ec4899;
-  padding-left:25px;
+  padding-left:20px;
 }
 
 .timeline-item{
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
 /* SKILLS */
@@ -127,21 +120,20 @@ p{
 .skills-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:40px;
+  gap:30px;
 }
 
 .skill{
   display:flex;
   justify-content:space-between;
-  margin-bottom:15px;
+  margin-bottom:12px;
 }
 
 .skill span:last-child{
   color:#ec4899;
-  font-weight:500;
 }
 
-/* PASSION GRID */
+/* GRID IMAGES */
 
 .grid{
   display:grid;
@@ -154,40 +146,26 @@ p{
   width:100%;
   height:300px;
   object-fit:cover;
-  border-radius:25px;
-  box-shadow:0 15px 30px rgba(0,0,0,0.05);
+  border-radius:20px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* CONTACT */
+/* ACHIEVEMENTS */
 
-.contact-box{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  background:#fff0f6;
-  padding:40px;
-  border-radius:30px;
-  box-shadow:0 15px 30px rgba(236,72,153,0.08);
-  text-align:center;
-}
-
-.contact-title{
-  font-weight:600;
-  color:#ec4899;
-  margin-bottom:10px;
-}
-
-.contact-info{
-  font-size:16px;
-  font-weight:500;
+.achievement{
+  margin-bottom:20px;
 }
 
 /* RESPONSIVE */
 
 @media(max-width:900px){
-  .intro{grid-template-columns:1fr;text-align:center;}
-  .skills-grid{grid-template-columns:1fr;}
-  .contact-box{grid-template-columns:1fr;}
+  .intro{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 </style>
@@ -196,125 +174,147 @@ p{
 <body>
 
 <nav class="navbar">
-<div class="logo">HOANG NGOC ANH</div>
-<ul class="nav-links">
+<ul>
 <li><a href="#about">About</a></li>
 <li><a href="#academic">Academic</a></li>
 <li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#achievements">Achievements</a></li>
 <li><a href="#passion">Passion</a></li>
-<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
 <div class="container">
 
-<!-- ABOUT -->
+<!-- INTRO -->
 
-<section class="section intro" id="about">
+<div class="section intro" id="about">
 <div>
-<h1>Hoang Ngoc Anh</h1>
+<h1>Ngọc Anh</h1>
 <p>
-I am currently a third-year student majoring in International Economics at Foreign Trade University. 
-With a strong interest in marketing strategy and brand communication, I am constantly seeking opportunities 
-to explore how businesses create value and connect with their audiences in a rapidly changing digital environment.
-</p>
-
-<p>
-Throughout my academic journey, I have developed analytical thinking, research capability, and teamwork skills. 
-I aspire to grow in dynamic environments where I can apply my knowledge, enhance practical skills, 
-and contribute positively to organizational goals.
+Year 3 International Economics student at Foreign Trade University,
+passionate about marketing strategy, communication and creative storytelling.
 </p>
 </div>
 
 <img src="avatar.jpg" class="avatar">
-</section>
+</div>
 
 <!-- ACADEMIC -->
 
-<section class="section" id="academic">
+<div class="section" id="academic">
 <h2>Academic Background</h2>
 <div class="card">
 <p><strong>Foreign Trade University (FTU)</strong></p>
 <p>Major: International Economics</p>
-<p>Expected Graduation: 2027</p>
+<p>Year 3 Student</p>
+<p>Career Orientation: Marketing Strategy – Communication – Analytical Thinking</p>
 </div>
-</section>
+</div>
 
 <!-- EXPERIENCE -->
 
-<section class="section" id="experience">
-<h2>Experience</h2>
-<div class="timeline">
+<div class="section" id="experience">
+<h2>Professional Experience</h2>
+<div class="card timeline">
+
 <div class="timeline-item">
-<p><strong>Marketing Intern</strong></p>
-<p>Supported content creation and campaign execution across digital platforms.</p>
+<strong>Member Gen 19</strong><br>
+Communications Department – Youth Union
 </div>
+
 <div class="timeline-item">
-<p><strong>Academic Research Activities</strong></p>
-<p>Participated in economic research projects related to international mobility and digital transformation.</p>
+<strong>Marketing Executive</strong><br>
+Sao Viet Center (Year 1–2)
+</div>
+
+<div class="timeline-item">
+<strong>Vice Head of Media</strong><br>
+FTU Youth Leadership Club (Year 2)
+</div>
+
+<div class="timeline-item">
+<strong>Vice Head of Communications</strong><br>
+Young Political Theory Club – FTU
+</div>
+
 </div>
 </div>
-</section>
 
 <!-- SKILLS -->
 
-<section class="section" id="skills">
+<div class="section" id="skills">
 <h2>Skills</h2>
+
 <div class="skills-grid">
-<div>
-<div class="skill"><span>Communication</span><span>Advanced</span></div>
-<div class="skill"><span>Teamwork</span><span>Advanced</span></div>
-<div class="skill"><span>Research</span><span>Intermediate</span></div>
+
+<div class="card">
+<h3>Creative & Design</h3>
+<div class="skill"><span>Adobe Illustrator</span><span>3.0</span></div>
+<div class="skill"><span>Adobe Photoshop</span><span>3.5</span></div>
+<div class="skill"><span>Adobe Lightroom</span><span>3.0</span></div>
+<div class="skill"><span>Canva</span><span>3.0</span></div>
+<div class="skill"><span>CapCut</span><span>3.0</span></div>
 </div>
-<div>
-<div class="skill"><span>Microsoft Office</span><span>Advanced</span></div>
-<div class="skill"><span>English</span><span>IELTS 7.0+</span></div>
-<div class="skill"><span>Content Creation</span><span>Intermediate</span></div>
+
+<div class="card">
+<h3>Business & Marketing</h3>
+<div class="skill"><span>Marketing Strategy</span><span>3.5</span></div>
+<div class="skill"><span>Market Research</span><span>3.0</span></div>
+<div class="skill"><span>Content Planning</span><span>3.5</span></div>
+<div class="skill"><span>Business Communication</span><span>3.5</span></div>
+<div class="skill"><span>Analytical Thinking</span><span>3.0</span></div>
+</div>
+
 </div>
 </div>
-</section>
 
 <!-- ACHIEVEMENTS -->
 
-<section class="section" id="achievements">
+<div class="section" id="achievements">
 <h2>Outstanding Achievements</h2>
+
 <div class="card">
-<p>
-Presented research at the International Conference 
-“International Mobility for Economic Development in an Era of Uncertainty and Digital Transformation” 
-held at Foreign Trade University (10/2025).
-</p>
+
+<div class="achievement">
+<strong>Research Presenter – International Conference (10/2025)</strong><br>
+Presented research at the conference:
+“International Mobility for Economic Development in an Era of Uncertainty and Digital Transformation”
+organized at Foreign Trade University.
 </div>
-</section>
+
+<div class="achievement">
+🥇 First Prize – “We, The Icebreakers 2023”
+</div>
+
+<div class="achievement">
+🎖 Encouragement Prize – “Phóng sự Nhập học”
+</div>
+
+</div>
+</div>
 
 <!-- PASSION -->
 
-<section class="section" id="passion">
+<div class="section" id="passion">
 <h2>Passion</h2>
-<p>
-Beyond academics, I have a strong passion for photography and films. 
-Capturing moments through photography allows me to express creativity and perspective, 
-while films inspire me with storytelling, aesthetics, and emotional depth.
-</p>
-</section>
 
-<!-- CONTACT -->
+<div class="card">
+<p><strong>Photography:</strong> Capturing visual stories through light, perspective and composition.</p>
+</div>
 
-<section class="section" id="contact">
-<h2>Contact</h2>
-<div class="contact-box">
-<div>
-<div class="contact-title">Email</div>
-<div class="contact-info">anhhn.fyu@gmail.com</div>
+<div class="grid">
+<img src="22ea5e7ec7bc49e210ad2.jpg">
+<img src="ca567e1ce6de688031cf3.jpg">
+<img src="ecf8604af98877d62e991.jpg">
 </div>
-<div>
-<div class="contact-title">Phone</div>
-<div class="contact-info">0343185475</div>
+
+<div class="card" style="margin-top:40px;">
+<p><strong>Cinema:</strong> I appreciate films that emphasize logic, mystery and imagination such as
+Sherlock Holmes, Conan and Harry Potter, which inspire my creative thinking approach.</p>
 </div>
+
 </div>
-</section>
 
 </div>
 
